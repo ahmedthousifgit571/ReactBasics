@@ -1,11 +1,13 @@
 import "./App.css";
-import Header from "./components/Header";
+import { useState } from "react";
+import Counter from "./counter";
+
 function App() {
-  const data = "Thousif";
+  const [state, setState] = useState(false);
   return (
     <div>
-      <Header data={data} />
-      <p>Im a MERN stack developer</p>
+      <h1 onClick={() => setState(!state)}>Show / hide</h1>
+      {state ? <Counter /> : null}
     </div>
   );
 }
